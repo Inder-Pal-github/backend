@@ -35,9 +35,9 @@ app.get("/", (req, res) => {
 app.use("/api/1.1/users", userRouter);
 app.use(authorization);
 app.use("/api/1.1/posts", postRouter);
-await connection;
 app.listen(port, async () => {
   try {
+    await connection;
     console.log(`Listening on http://localhost:${port}`);
   } catch (error) {
     console.log("Not connected!");
